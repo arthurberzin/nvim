@@ -80,7 +80,7 @@ sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.
 
 ```bash
 cd ~ && mkdir .config && cd .config && mkdir nvim && cd ~
-git clone https://github.com/arthurberzin/vim ~/.config/nvim
+git clone https://github.com/arthurberzin/nvim ~/.config/nvim
 ```
 
 ### Install plugins
