@@ -29,5 +29,5 @@ hi Pmenu ctermfg=white ctermbg=8
 
 " lspconfig setup
 lua <<EOF
-  require'lspconfig'.pyright.setup{}
+  require('lspconfig').pyright.setup{}
 EOF
