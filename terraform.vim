@@ -1,5 +1,5 @@
 lua <<EOF
-  require'lspconfig'.terraformls.setup{}
+  require('lspconfig').terraformls.setup{}
 EOF
 
 autocmd BufWritePre *.tfvars lua vim.lsp.buf.format()
