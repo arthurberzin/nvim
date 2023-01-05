@@ -1,7 +1,7 @@
 ### Install NVim
 ###### Open Bash run commands
 ```bash
-curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim.appimage
+curl -LO https://github.com/neovim/neovim/releases/download/stable/nvim.appimage 
 chmod u+x nvim.appimage
 ./nvim.appimage
 ```
@@ -16,9 +16,14 @@ sudo mv squashfs-root /
 sudo ln -s /squashfs-root/AppRun /usr/bin/nvim
 nvim
 ```
-#### Install Brew
+#### Install [Brew](https://brew.sh/)
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+```
+```bash
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile &&
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.zprofile &&
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 ```
 ###### complete installation by following the instruction
 
@@ -85,17 +90,17 @@ git clone https://github.com/arthurberzin/nvim ~/.config/nvim
 
 ### Install plugins
 ```bash
-nvim -c ':PlugInstall'
+nvim +':PlugInstall --sync' +qa 
 ```
 
 ### Build Neovim Intellisense with Coc
 ```bash
-cd ~/.local/share/nvim/plugged/coc.nvim && yarn install && yarn build && nvim -c ':PlugInstall'
+cd ~/.local/share/nvim/plugged/coc.nvim && yarn install && yarn build && nvim +':PlugInstall --sync' +qa 
 ```
 
 #### Complete instaling Coc by installing needed languages
 ```bash
-nvim -c ':CocInstall coc-omnisharp coc-html-css-support coc-docker coc-yaml coc-json coc-eslint coc-css coc-jedi coc-prettier coc-git coc-angular coc-csharp-ls'
+nvim +':CocInstall coc-omnisharp coc-html-css-support coc-docker coc-yaml coc-json coc-eslint coc-css coc-jedi coc-prettier coc-git coc-angular coc-csharp-ls -sync' +qa  
 ```
 
 
